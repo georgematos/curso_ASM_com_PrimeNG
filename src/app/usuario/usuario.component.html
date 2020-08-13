@@ -1,2 +1,12 @@
 <p>Usuário</p>
-<p>{{ usuario.getNome }}</p>
+
+<table border="1px">
+  <tr>
+    <th>Nome:</th>
+    <th>Email:</th>
+  </tr>
+  <tr *ngFor="let usuario of usuarios">
+    <td>{{ usuario.getNome }}</td>
+    <td>{{ usuario.getEmail }}</td>
+  </tr>
+</table>

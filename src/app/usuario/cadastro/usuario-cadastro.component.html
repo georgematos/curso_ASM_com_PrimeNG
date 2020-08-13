@@ -1,0 +1,11 @@
+<form [formGroup]="profileForm" (ngSubmit)="salvar()">
+  <label>
+    Nome:
+    <input type="text" formControlName="nome">
+  </label>
+  <label>
+    Email:
+    <input type="text" formControlName="email">
+  </label>
+  <button [disabled]="!profileForm.valid" type="submit">Salvar</button>
+</form>

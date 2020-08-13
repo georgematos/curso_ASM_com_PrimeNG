@@ -6,6 +6,15 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
+  private usuarios = [
+    new Usuario({nome: "Laura", email: "laura@email.com"}),
+    new Usuario({nome: "Seth", email: "seth@email.com"}),
+    new Usuario({nome: "Birdie", email: "birdie@email.com"}),
+    new Usuario({nome: "Ryu", email: "ryu@email.com"}),
+    new Usuario({nome: "Juri", email: "juri@email.com"}),
+    new Usuario({nome: "Chun-li", email: "chunli@email.com"}),
+  ];
+  
   constructor() { }
 
   public getUsuario(): Usuario {
@@ -16,13 +25,7 @@ export class UsuarioService {
   }
 
   public getUsuarios(): Array<Usuario> {
-    return [
-      new Usuario({nome: "Laura", email: "laura@email.com"}),
-      new Usuario({nome: "Seth", email: "seth@email.com"}),
-      new Usuario({nome: "Birdie", email: "birdie@email.com"}),
-      new Usuario({nome: "Ryu", email: "ryu@email.com"}),
-      new Usuario({nome: "Juri", email: "juri@email.com"}),
-      new Usuario({nome: "Chun-li", email: "chunli@email.com"}),
-    ];
+    return this.usuarios;
   }
+
 }

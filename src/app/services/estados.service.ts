@@ -13,8 +13,8 @@ export class EstadosService {
     private httpClient: HttpClient
   ) { }
 
-  public getEstados(): Observable<any> {
-    return this.httpClient.get(this.urlApi);
+  public getEstados(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.urlApi);
   }
 
 }

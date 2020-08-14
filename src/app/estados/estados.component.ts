@@ -8,7 +8,7 @@ import { EstadosService } from '../services/estados.service';
 })
 export class EstadosComponent implements OnInit {
 
-  public estados: [];
+  public estados: Array<any>;
 
   constructor(
     private estadosService: EstadosService
@@ -19,9 +19,8 @@ export class EstadosComponent implements OnInit {
 
   public getEstados(): void {
     this.estadosService.getEstados()
-      .subscribe((resp: any) => {
+      .subscribe((resp: Array<any>) => {
         this.estados = resp;
-        console.log(this.estados);
       });
   }
 

@@ -20,7 +20,11 @@ export class EstadosComponent implements OnInit {
   public getEstados(): void {
     this.estadosService.getEstados()
       .subscribe((resp: Array<any>) => {
-        this.estados = resp;
+        this.estados = resp.sort(function(a, b) {
+          if(a.nome < b.nome) return -1;
+          if(a.nome > b.nome) return 1;
+          return 0;
+        });
       });
   }
 
